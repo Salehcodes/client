@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-
+const API_BASE = import.meta.env.VITE_SERVER_URI;
 export default function RecordingPage() {
   const { state } = useLocation();
   /* after we sent the examname and question count with navigate from screen above we get it fusing uselocation */
