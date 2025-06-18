@@ -1,0 +1,42 @@
+.main-page {
+  padding: 20px;
+  text-align: center;
+  font-size: 112.5%;
+  direction: rtl;
+}
+
+.user-image {
+  border-radius: 50%;
+  width: 80px;
+}
+
+.add-exam-button {
+  font-size: 1em;
+  padding: 8px 16px;
+  margin-bottom: 30px;
+}
+
+.exam-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table-header {
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.table-cell {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.download-button {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

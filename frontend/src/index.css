@@ -1,0 +1,23 @@
+
+*{
+    background-color: #010125;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+img{
+    border-radius: 50px;
+}
+.profile{
+    border: 2px solid white;
+    width: 90%;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0 auto;
+    display: block;
+    padding: 15px;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
