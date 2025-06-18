@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+const API_BASE = import.meta.env.VITE_SERVER_URI;
 
 export default function NewExamPage() {
   const [examName, setExamName] = useState("");
@@ -24,9 +25,7 @@ export default function NewExamPage() {
     try {
       const token = await getAccessTokenSilently();
       const res = await fetch(
-        `http://localhost:5000/grades/check-exam?name=${encodeURIComponent(
-          examName
-        )}`,
+        `${API_BASE}/grades/check-exam?name=${encodeURIComponent(examName)}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

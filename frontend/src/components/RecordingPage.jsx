@@ -168,7 +168,7 @@ export default function RecordingPage() {
 
     try {
       const token = await getAccessTokenSilently();
-      const response = await fetch("http://localhost:5000/grades", {
+      const response = await fetch(`${API_BASE}/grades`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import "../MainPage.css";
-
+const API_BASE = import.meta.env.VITE_SERVER_URI;
 export default function MainPage() {
   const { user, getAccessTokenSilently, isAuthenticated, isLoading } =
     useAuth0();
@@ -13,7 +13,7 @@ export default function MainPage() {
     const fetchExams = async () => {
       try {
         const token = await getAccessTokenSilently();
-        const response = await fetch("http://localhost:5000/grades/exams", {
+        const response = await fetch(`${API_BASE}/grades/exams`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -36,9 +36,7 @@ export default function MainPage() {
     try {
       const token = await getAccessTokenSilently();
       const response = await fetch(
-        `http://localhost:5000/grades/export?exam=${encodeURIComponent(
-          examName
-        )}`,
+        `${API_BASE}/grades/export?exam=${encodeURIComponent(examName)}`,
         {
           method: "GET",
           headers: {
