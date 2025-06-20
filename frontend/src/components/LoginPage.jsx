@@ -29,8 +29,8 @@ export default function LoginPage() {
 
         {!isAuthenticated ? (
           <button className="login-button" onClick={() => loginWithRedirect()}>
-           Google התחברות עם 
-           <img src={google} alt="gmail login" className="google-icon"/>
+            Google התחברות עם
+            <img src={google} alt="gmail login" className="google-icon" />
           </button>
         ) : (
           <div>
@@ -49,8 +49,8 @@ export default function LoginPage() {
       <div className="login-right">
         <h2 className="login-right-title">פשוט הרבה יותר מהיר</h2>
         <p className="login-right-desc">
-          כי הזמן שלכם חשוב לנו — ezGrading יעזור לכם למפות ציונים במהירות רק
-          באמצעות הקול שלכם אחרי כל מבחן.
+          כי הזמן שלכם חשוב לנו — ezGrading מפשט את תהליך בדיקת המבחנים ומיפוי
+          הציונים, בקלות, במהירות, ובאמצעות הקול שלכם בלבד
         </p>
         <div className="top-buttons">
           <button className="join-button">Join Us</button>
