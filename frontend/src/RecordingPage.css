@@ -1,0 +1,53 @@
+/* RecordingPage.css */
+
+.page-container {
+    direction: rtl;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .exam-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .student-name-container,
+  .grade-input-container {
+    margin: 10px;
+  }
+  
+  .grade-section {
+    margin-top: 20px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #004a99;
+  }
+  
+  .transcript-display {
+    margin-top: 15px;
+    font-style: italic;
+    color: #333;
+  }
+  

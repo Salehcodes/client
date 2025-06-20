@@ -1,0 +1,121 @@
+/* LoginPage.css */
+.login-page {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.login-left {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 60px 40px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right {
+  flex: 1;
+  background: linear-gradient(135deg, #1126e0 0%, #8a1ca5 100%);
+  color: rgb(255, 255, 255);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.login-title {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.login-subtitle {
+  font-size: 1em;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.login-button {
+  display: flex;
+  width:17em;
+  align-items: center;
+  justify-content: center; /* or 'start' if you want left-align */
+  padding: 10px;
+  font-size: 1em;
+  background-color: #2051a0;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.google-icon {
+  width: 15%;
+  height: 75%;
+  object-fit:contain;
+  aspect-ratio: 3/2;
+  border-radius: 50%;
+}
+
+
+.login-logout-button {
+  background-color: #ffffff;
+  margin-top: 10px;
+}
+
+.logged-in {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.login-right-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+.login-right-desc {
+  font-size: 1em;
+  max-width: 300px;
+  color: black;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.top-buttons {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+}
+
+.join-button {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sign-up-link {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.logoImg {
+  height: 40vh;
+}

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import "../MainPage.css";
+
+
+import ezGrading from "../assets/service2.png"
 const API_BASE = import.meta.env.VITE_SERVER_URI;
 export default function MainPage() {
-  const { user, getAccessTokenSilently, isAuthenticated, isLoading } =
+  const { user, getAccessTokenSilently, isAuthenticated, isLoading, logout } =
     useAuth0();
   const [exams, setExams] = useState([]);
   const navigate = useNavigate();
-
   useEffect(() => {
     const fetchExams = async () => {
       try {
@@ -70,15 +72,21 @@ export default function MainPage() {
 
   return (
     <div className="main-page">
+           <div className="header">
+           <button onClick={logout} className="LogoutBtn">
+        <i class="fa fa-sign-out" color="black"></i>התנתקות
+      </button>
+           <img className="Logoimg" src={ezGrading} alt="" />
+            </div>
       <h1>שלום, {user?.name}</h1>
       {user?.picture && (
         <img src={user.picture} alt={user.name} className="user-image" />
       )}
       <br />
       <br />
-      <button onClick={handleAddExam} className="add-exam-button">
-        הוספת מבחן חדש
-      </button>
+        <button onClick={handleAddExam} className="add-exam-button">
+          + הוספת מבחן חדש
+        </button>
 
       <h2>המבחנים הקודמים שלך</h2>
 

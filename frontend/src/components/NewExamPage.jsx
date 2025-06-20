@@ -52,7 +52,7 @@ export default function NewExamPage() {
   };
 
   return (
-    <div dir="rtl" style={{ textAlign: "center", padding: "40px" }}>
+    <div dir="rtl" style={{ textAlign: "center", padding: "40px",color: "white" }}>
       <h2>מבחן חדש</h2>
 
       <div style={{ margin: "20px" }}>

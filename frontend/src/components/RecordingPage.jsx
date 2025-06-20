@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 const API_BASE = import.meta.env.VITE_SERVER_URI;
+import PuffLoader from "react-spinners/PuffLoader.js";
+
 export default function RecordingPage() {
   const { state } = useLocation();
   /* after we sent the examname and question count with navigate from screen above we get it fusing uselocation */
@@ -197,6 +199,9 @@ export default function RecordingPage() {
       if (e.key === "Enter") {
         handleNextStudent();
       }
+      if (e.key == "Space") {
+        handleToggleRecording();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -207,7 +212,10 @@ export default function RecordingPage() {
   };
 
   return (
-    <div dir="rtl" style={{ textAlign: "center", padding: "40px" }}>
+    <div
+      dir="rtl"
+      style={{ color: "white", textAlign: "center", padding: "40px" }}
+    >
       <h2>מבחן: {examName}</h2>
 
       <div style={{ margin: "10px" }}>
@@ -234,15 +242,25 @@ export default function RecordingPage() {
       </div>
 
       <button onClick={handleToggleRecording} style={{ marginTop: "20px" }}>
-        {isRecording ? "⏹️ Stop Recording" : "🎤 Start Recording"}
+        {isRecording ? "⏹️ עצור הקלטה" : "🎤 הקליט"}
+        {isRecording && <PuffLoader style={{ color: "red" }} color="#ff0505" />}
       </button>
 
-      <p>{transcript && `Heard: ${transcript}`}</p>
+      <p>{transcript && `ההקלטה: ${transcript}`}</p>
 
-      <button onClick={handleNextStudent}>Next (Save Student)</button>
+      <button onClick={handleNextStudent}>שמור ועבור לתלמיד הבא</button>
       <br />
       <br />
-      <button onClick={handleFinishExam}>Finish Exam</button>
+      <button onClick={handleFinishExam}>סיום הכל ושמירה לקובץ אקסל</button>
+      <br />
+      <br />
+      <br />
+      <h3>*לתוצאה מדויקת, אנא השהה לרגע בין שאלה לשאלה בעת הדיבור.</h3>
+      <h3>*אם סיימת להקליט והתוצאה לא נכונה אפשר ללחוץ להקליט שוב מחדש </h3>
+      <h3>
+        *לנוחיתכם אתם יכולים ללחוץ space להקליט או לעצור הקלטה ואתם יכולים ללחוץ
+        enter כדי לשמור ולעבור לתלמיד הבא
+      </h3>
     </div>
   );
 }

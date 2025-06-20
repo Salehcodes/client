@@ -1,8 +1,15 @@
+body {
+  background-color: rgb(17, 15, 89);
+}
 .main-page {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   text-align: center;
+  align-items: center;
   font-size: 112.5%;
   direction: rtl;
+  color: rgb(255, 255, 255);
 }
 
 .user-image {
@@ -14,6 +21,11 @@
   font-size: 1em;
   padding: 8px 16px;
   margin-bottom: 30px;
+  width: max-content;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .exam-table {
@@ -40,4 +52,33 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.header {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  border: 2px solid white;
+  flex-direction: row;
+  justify-content: space-between; /* horizontally center */
+  align-items: center; /* vertically center */
+}
+
+.Logoimg {
+  height: 5rem;
+  order: 2;
+  align-content: end;
+}
+
+.LogoutBtn {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: rgb(230, 226, 226); 
+  padding: 8px 16px;
+  margin-right: 1rem;
+  width: max-content;
+  align-self: center; /* Keeps it aligned left if the parent is centered */
+  display: flex; /* Needed for gap to work */
+  align-items: center; /* Vertically align icon and text */
+  gap: 0.5rem; /* Adds space between icon and text */
 }
