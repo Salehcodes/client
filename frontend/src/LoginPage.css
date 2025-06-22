@@ -46,6 +46,7 @@
 .login-subtitle {
   text-align: center;
   font-size: 1rem;
+  font-weight: bold;
   margin-bottom: 30px;
   color: #000000;
 }

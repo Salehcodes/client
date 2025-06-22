@@ -43,8 +43,8 @@ export default function LoginPage() {
           הציונים, בקלות, במהירות, ובאמצעות הקול שלכם בלבד
         </p>
         <div className="top-buttons">
-          <button className="join-button">Join Us</button>
-          <button className="sign-up-link">Sign Up</button>
+          <button className="join-button">עלינו</button>
+          <button className="sign-up-link">הנחיות</button>
         </div>
       </div>
     </div>
