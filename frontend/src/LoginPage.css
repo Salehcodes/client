@@ -6,7 +6,12 @@
   font-family: sans-serif;
   flex-direction: row-reverse;
 }
-
+@media (max-width: 678px) {
+  .login-page {
+    flex-direction: column-reverse;
+    height: auto; /* allow content height instead of 100vh */
+  }
+}
 .login-left {
   flex: 1;
   background-color: #ffffff;
@@ -111,8 +116,6 @@
 }
 .logoImg {
   width: 100%;
-  max-width: 300px; /* or whatever makes sense */
-  height: auto;
-  object-fit: contain;
+  max-width: 500px; /* or whatever makes sense */
   align-self: center; /* to center it if needed */
 }
