@@ -27,22 +27,12 @@ export default function LoginPage() {
         <h1 className="login-title">שלום מורה</h1>
         <p className="login-subtitle">לכניסה לחשבון</p>
 
-        {!isAuthenticated ? (
+        <div className="btnContainer">
           <button className="login-button" onClick={() => loginWithRedirect()}>
-            Google התחברות עם
+            התחברות עם
             <img src={google} alt="gmail login" className="google-icon" />
           </button>
-        ) : (
-          <div>
-            <p className="logged-in">שלום, {user.name}</p>
-            <button
-              className="login-button login-logout-button"
-              onClick={() => logout({ returnTo: window.location.origin })}
-            >
-              התנתקות
-            </button>
-          </div>
-        )}
+        </div>
       </div>
 
       {/* Right Panel */}

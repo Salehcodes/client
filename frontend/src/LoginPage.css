@@ -1,8 +1,10 @@
 /* LoginPage.css */
 .login-page {
   display: flex;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  inline-size: 100vw;
+  block-size: 100vh;
+  font-family: sans-serif;
+  flex-direction: row-reverse;
 }
 
 .login-left {
@@ -23,29 +25,35 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
 }
 
 .login-title {
-  font-size: 2.2em;
+  text-align: center;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 10px;
   color: black;
 }
 
 .login-subtitle {
-  font-size: 1em;
+  text-align: center;
+  font-size: 1rem;
   margin-bottom: 30px;
   color: #000000;
+}
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-button {
   display: flex;
-  width:17em;
+  width: 17rem;
   align-items: center;
   justify-content: center; /* or 'start' if you want left-align */
   padding: 10px;
-  font-size: 1em;
+  font-size: 1rem;
   background-color: #2051a0;
   color: rgb(255, 255, 255);
   border: none;
@@ -54,36 +62,21 @@
 }
 
 .google-icon {
-  width: 15%;
-  height: 75%;
-  object-fit:contain;
-  aspect-ratio: 3/2;
-  border-radius: 50%;
-}
-
-
-.login-logout-button {
-  background-color: #ffffff;
-  margin-top: 10px;
-}
-
-.logged-in {
-  font-weight: bold;
-  margin-bottom: 20px;
+  width: 10%;
+  padding-inline-start: 10px;
 }
 
 .login-right-title {
-  font-size: 1.8em;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: bolder;
   margin-bottom: 10px;
   color: rgb(255, 255, 255);
-  background-color: transparent;
 }
 
 .login-right-desc {
-  font-size: 1em;
+  font-size: 1rem;
   max-width: 300px;
-  color: black;
+  color: white;
   background-color: transparent;
   font-weight: bold;
 }
@@ -117,5 +110,9 @@
   cursor: pointer;
 }
 .logoImg {
-  height: 40vh;
+  width: 100%;
+  max-width: 300px; /* or whatever makes sense */
+  height: auto;
+  object-fit: contain;
+  align-self: center; /* to center it if needed */
 }
