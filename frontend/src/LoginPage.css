@@ -11,6 +11,9 @@
     flex-direction: column-reverse;
     height: auto; /* allow content height instead of 100vh */
   }
+  .login-right-title {
+    padding-block-start: 50px;
+  }
 }
 .login-left {
   flex: 1;
