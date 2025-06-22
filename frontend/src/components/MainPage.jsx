@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import "../MainPage.css";
-
-
-import ezGrading from "../assets/service2.png"
+import Footer from "../components/Footer";
+import ezGrading from "../assets/service2.png";
 const API_BASE = import.meta.env.VITE_SERVER_URI;
+
 export default function MainPage() {
   const { user, getAccessTokenSilently, isAuthenticated, isLoading, logout } =
     useAuth0();
@@ -72,27 +72,29 @@ export default function MainPage() {
 
   return (
     <div className="main-page">
-           <div className="header">
-           <button onClick={logout} className="LogoutBtn">
-        <i class="fa fa-sign-out" color="black"></i>התנתקות
-      </button>
-           <img className="Logoimg" src={ezGrading} alt="" />
-            </div>
+      <div className="MainCot">
+      <div className="myheader">
+        <button onClick={logout} className="LogoutBtn">
+          <i class="fa fa-sign-out" color="black"></i>התנתקות
+        </button>
+          <img className="Logoimg" src={ezGrading} alt="" />
+      </div>
       <h1>שלום, {user?.name}</h1>
       {user?.picture && (
-        <img src={user.picture} alt={user.name} className="user-image" />
+        <img src={user.picture} alt={user?.name} className="user-image" />
       )}
       <br />
       <br />
-        <button onClick={handleAddExam} className="add-exam-button">
-          + הוספת מבחן חדש
-        </button>
+      <button onClick={handleAddExam} className="add-exam-button">
+        + הוספת מבחן חדש
+      </button>
 
       <h2>המבחנים הקודמים שלך</h2>
 
       {exams.length === 0 ? (
         <p>אין מבחנים שמורים עדיין.</p>
       ) : (
+        <div className="TableCont">
         <table className="exam-table">
           <thead>
             <tr>
@@ -116,7 +118,10 @@ export default function MainPage() {
             ))}
           </tbody>
         </table>
+        </div>
       )}
+      </div>
+      <Footer />
     </div>
   );
 }

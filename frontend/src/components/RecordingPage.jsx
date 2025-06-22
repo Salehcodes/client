@@ -3,6 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 const API_BASE = import.meta.env.VITE_SERVER_URI;
 import PuffLoader from "react-spinners/PuffLoader.js";
+import "../RecordingPage.css";
+import ezGrading from "../assets/service2.png";
+import Footer from "../components/Footer";
 
 export default function RecordingPage() {
   const { state } = useLocation();
@@ -212,55 +215,75 @@ export default function RecordingPage() {
   };
 
   return (
-    <div
-      dir="rtl"
-      style={{ color: "white", textAlign: "center", padding: "40px" }}
-    >
+    <div className="recordingPageCont" dir="rtl">
+      <div className="recordingCont">
+      <header
+        className="myheader"
+        style={{ display: "flex", margin:"0",flexDirection: "row-reverse" }}
+      >
+        <img className="Logoimg" src={ezGrading} alt="" />
+      </header>
+      <br />
+      {isRecording && (
+        <PuffLoader
+          color="#ff0505"
+          style={{
+            position: "absolute",
+            top: "90px",
+            left: "20px",
+            zIndex: 100,
+          }}
+        />
+      )}
       <h2>מבחן: {examName}</h2>
 
-      <div style={{ margin: "10px" }}>
+      <div className="student-name-block">
         <label>שם תלמיד:</label>
         <br />
         <input
           type="text"
           value={studentName}
           onChange={(e) => setStudentName(e.target.value)}
+          className="input-bold"
         />
       </div>
 
-      <div style={{ marginTop: "20px" }}>
+      <div className="grades-container">
         {grades.map((grade, i) => (
-          <div key={i} style={{ margin: "10px" }}>
+          <div key={i} className="grade-input-block">
             <label>שאלה {i + 1}:</label>
             <input
               type="number"
               value={grade}
               onChange={(e) => handleGradeChange(i, e.target.value)}
+              className="input-bold"
             />
           </div>
         ))}
       </div>
 
-      <button onClick={handleToggleRecording} style={{ marginTop: "20px" }}>
+      <button onClick={handleToggleRecording} className="recording-button">
         {isRecording ? "⏹️ עצור הקלטה" : "🎤 הקליט"}
-        {isRecording && <PuffLoader style={{ color: "red" }} color="#ff0505" />}
       </button>
-
+      <br />
       <p>{transcript && `ההקלטה: ${transcript}`}</p>
+      <div className="twobtns">
+        <button onClick={handleNextStudent}>שמור ועבור לתלמיד הבא</button>
+        <button onClick={handleFinishExam}>סיום הכל ושמירה לקובץ אקסל</button>
+      </div>
+      <br />
 
-      <button onClick={handleNextStudent}>שמור ועבור לתלמיד הבא</button>
-      <br />
-      <br />
-      <button onClick={handleFinishExam}>סיום הכל ושמירה לקובץ אקסל</button>
-      <br />
-      <br />
-      <br />
-      <h3>*לתוצאה מדויקת, אנא השהה לרגע בין שאלה לשאלה בעת הדיבור.</h3>
-      <h3>*אם סיימת להקליט והתוצאה לא נכונה אפשר ללחוץ להקליט שוב מחדש </h3>
-      <h3>
-        *לנוחיתכם אתם יכולים ללחוץ space להקליט או לעצור הקלטה ואתם יכולים ללחוץ
-        enter כדי לשמור ולעבור לתלמיד הבא
-      </h3>
+      <div className="notes">
+        <h3>*לתוצאה מדויקת, אנא השהה לרגע בין שאלה לשאלה בעת הדיבור.</h3>
+        <h3>*אם סיימת להקליט והתוצאה לא נכונה אפשר ללחוץ להקליט שוב מחדש </h3>
+        <h3>
+          *לנוחיתכם אתם יכולים ללחוץ space להקליט או לעצור הקלטה ואתם יכולים
+          ללחוץ enter כדי לשמור ולעבור לתלמיד הבא
+        </h3>
+      </div>
+
+    </div>
+      <Footer/>
     </div>
   );
 }

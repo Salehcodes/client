@@ -1,15 +1,24 @@
-body {
-  background-color: rgb(17, 15, 89);
-}
 .main-page {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: rgb(17, 15, 89);
   text-align: center;
-  align-items: center;
-  font-size: 112.5%;
+  color: white;
   direction: rtl;
-  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+.MainCot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
 }
 
 .user-image {
@@ -29,7 +38,6 @@ body {
 }
 
 .exam-table {
-  margin: 0 auto;
   border-collapse: collapse;
 }
 
@@ -54,7 +62,7 @@ body {
   cursor: pointer;
 }
 
-.header {
+.myheader {
   background-color: white;
   display: flex;
   width: 100%;
@@ -73,7 +81,7 @@ body {
 .LogoutBtn {
   font-size: 1em;
   font-weight: bold;
-  background-color: rgb(230, 226, 226); 
+  background-color: rgb(230, 226, 226);
   padding: 8px 16px;
   margin-right: 1rem;
   width: max-content;
@@ -82,3 +90,8 @@ body {
   align-items: center; /* Vertically align icon and text */
   gap: 0.5rem; /* Adds space between icon and text */
 }
+Footer {
+  margin-top: 2rem;
+  width: 100vw;
+}
+

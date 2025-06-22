@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 const API_BASE = import.meta.env.VITE_SERVER_URI;
+import ezGrading from "../assets/service2.png";
+import Footer from "../components/Footer";
+import "../NewExamPage.css";
 
 export default function NewExamPage() {
   const [examName, setExamName] = useState("");
   const [questionCount, setQuestionCount] = useState("");
   const navigate = useNavigate();
-  const { getAccessTokenSilently } = useAuth0();
-
+  const { user, getAccessTokenSilently, isAuthenticated, isLoading, logout } =
+    useAuth0();
   const parsedCount = Number(questionCount);
 
   const handleStartRecording = async () => {
@@ -52,10 +55,18 @@ export default function NewExamPage() {
   };
 
   return (
-    <div dir="rtl" style={{ textAlign: "center", padding: "40px",color: "white" }}>
+    <div className="newExamPage">
+      <div className="newCont">
+      <div className="myheader"
+             style={{backgroundColor: "white", display: "flex", margin:"0",flexDirection: "row-reverse" }}
+           >
+             <img className="Logoimg" src={ezGrading} alt="ezGrading" />
+           </div>
+      <br />
+
       <h2>מבחן חדש</h2>
 
-      <div style={{ margin: "20px" }}>
+      <div className="input-block">
         <label>שם המבחן:</label>
         <br />
         <input
@@ -65,7 +76,7 @@ export default function NewExamPage() {
         />
       </div>
 
-      <div style={{ margin: "20px" }}>
+      <div className="input-block">
         <label>מספר שאלות:</label>
         <br />
         <input
@@ -77,6 +88,8 @@ export default function NewExamPage() {
       </div>
 
       <button onClick={handleStartRecording}>בוא נתחיל להקליט</button>
+      </div>
+      <Footer />
     </div>
   );
 }
